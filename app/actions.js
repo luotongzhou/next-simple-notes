@@ -14,8 +14,6 @@ const schema = z.object({
 	content: z.string().min(1, '请填写内容').max(100, '字数最多 100')
 })
 
-const sleep = ms => new Promise(r => setTimeout(r, ms))
-
 export async function saveNote(prevState, formData) {
 	const noteId = formData.get('noteId')
 	const title = formData.get('title')
@@ -34,8 +32,6 @@ export async function saveNote(prevState, formData) {
 			errors: validated.error.issues
 		}
 	}
-
-	await sleep(1000)
 
 	if (noteId) {
 		await updateNote(noteId, JSON.stringify(data))
