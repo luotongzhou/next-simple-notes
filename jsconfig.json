@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/actions": ["app/[lng]/actions"],
+			"@/*": ["/*"],
+			"auth": ["./auth"],
+			"chain": ["./chain"]
+		}
+	},
+	"include": [
+		"next-env.d.js",
+		"**/*.js",
+		"**/*.jsx",
+		".next/types/**/*.js",
+		".contentlayer/generated"
+	]
+}
